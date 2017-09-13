@@ -1420,10 +1420,10 @@ CREATE TABLE `bot_responses` (
 
 INSERT INTO `bot_response_types` (`type`) VALUES ('facilities'),('activities'),('news'),('events'),('photo'),('video');
 
-ALTER TABLE `sms`.`parent`
+ALTER TABLE `parent`
 ADD COLUMN `bot_auth_key` LONGTEXT NULL DEFAULT NULL AFTER `authentication_key`,
 ADD COLUMN `fb_id` TEXT NULL AFTER `bot_auth_key`;
 
-ALTER TABLE `sms`.`bot_responses`
+ALTER TABLE `bot_responses`
 CHANGE COLUMN `image` `image` TEXT NULL DEFAULT NULL ,
 ADD COLUMN `video` TEXT NULL DEFAULT NULL AFTER `image`;
